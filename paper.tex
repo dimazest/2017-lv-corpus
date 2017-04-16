@@ -64,7 +64,6 @@ Table~\ref{tab:client-counts} shows the top ten most popular clients in the rehy
 
 The final collection resulted into 136\,067 tweets which are in Latvian, Russian or English and created after 1st of November 2016. The language of a tweet is provided by the corresponding field in the tweet JSON representation.
 
-
 \input{figures/timeline.tex}
 
 \section{Quantitative analysis}
@@ -74,15 +73,21 @@ Out of 136\,067 tweets that constitute the final collection, 45.5\% are in Latvi
 
 \input{figures/language-counts.tex}
 
-Figure~\ref{fig:timeline} shows the bandwidth of tweets in time for all three languages. There are several peaks in Twitter usage.
+Figure~\ref{fig:timeline} shows the bandwidth of tweets in time for all three languages. There are several peaks in Twitter usage. Some of them affect all three languages, as in early January, some of them affect only one language, as in late January.
+
+If the Twitter behaviour is affected by the events in the real world, then the peaks should correspond to events in the real word. The difference in peaks, could then be explained as there are different real word events that trigger discussions on Twitter in Latvian, Russian and English. Table~\ref{tab:timeline-lang-corr} suggests, that tweets in Latvian and English share similar behaviour. The Russian tweet timeline is distinct from both timelines, tough it's behaviour is more similar to the Latvian timeline than to English.
+
+\input{figures/timeline-lang-corr.tex}
+
+What are the distinctive and similar properties of the timelines? To answer the question, we first identify the real world events that happened during the biggest peaks.
 
 \paragraph{Mid November}
 
-18 November is the Proclamation Day of the Republic of Latvia. Numerous events take place across the country including torchlight processions and fireworks. The volume of tweets peaks in all three languages, thought the peak in Russian is less significant than in Latvian and English.
+11th of November is \href{https://en.wikipedia.org/wiki/L\%C4\%81\%C4\%8Dpl\%C4\%93sis_Day}{L\={a}\v{c}pl\={e}sis Day}, a memorial day for soldiers who fought for the independence of Latvia. 18 November is the Proclamation Day of the Republic of Latvia. Numerous events take place across the country including candle placing on and by the wall of Riga Castle, torchlight processions and fireworks. The volume of tweets peaks in all three languages, thought the peak in Russian is less significant than in Latvian and English.
 
-\paragraph{Mid December}
+% \paragraph{Mid December}
 
-There is higher amount of Russian tweets, but Latvian and English tweet volume stays constant.
+% There is higher amount of Russian tweets, but Latvian and English tweet volume stays constant.
 
 \paragraph{Early January}
 
@@ -90,11 +95,22 @@ There is a lot of activity during the New Year celebration for all three languag
 
 \paragraph{Late January}
 
-In late January, the number of Latvian tweets increases, while for other languages it stays the same.
+The inauguration of Donald Trump as the 45th President of the United States held on 20th of January 2017. The number of Latvian tweets increases, while for other languages it stays roughly the same.
 
-\paragraph{Mid March}
+% \paragraph{Early March}
 
-There is a general decline in Twitter usage for Latvian and English, but not for Russian, when for a short period of time there are more Russian tweets posted than Latvian.
+% There are peaks in Latvian and Russian tweets.
+
+% \paragraph{Mid March}
+
+% There is a general decline in Twitter usage for Latvian and English, but not for Russian, when for a short period of time there are more Russian tweets posted than Latvian.
+
+Timeline analysis gives an insight of what events are reflected on Twitter, but does not indicate how twitter is used by ethnic communities, as language choice might depend on the topic, rather than author preference.
+
+\section{Language use}
+\label{sec:lang-use}
+
+
 
 \bibliography{references,dmilajevs_publications}
 \bibliographystyle{acl_natbib}

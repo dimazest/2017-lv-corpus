@@ -39,6 +39,28 @@ and (
 or features#>>'{languages,0}' = 'ru'
 or features#>>'{languages,0}' = 'en'
 )
+and created_at > '2016-10-31'
+);
+
+-- Language statistics
+with tweets as (
+select *  from tweet
+where collection = 'lv-final' and created_at >= '2016-11-01' and created_at < '2017-04-01'
+)
+select features#>>'{languages,0}' as language, count(*), round(count(*)::numeric / (select count(*) from tweets), 3) * 100 as share
+from tweets
+group by language
+order by count(*) desc;
+
+-- Late January
+with tweets as (
+select *  from tweet
+where collection = 'lv-final' and created_at >= '2017-01-22' and created_at < '2017-02-05'
+)
+insert into
+tweet(tweet_id, collection, text, features, created_at) (
+select tweet_id, 'lv-late-jan' as collection, tweets.text, features::jsonb, created_at
+from tweets
 );
 
 
