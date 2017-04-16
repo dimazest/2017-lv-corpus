@@ -38,17 +38,13 @@
 \begin{abstract}
 \end{abstract}
 
-\citet{milajevs-griffiths:2016:RepEval}
-
 \section{Introduction}
 \label{sec:introduction}
-
-
 
 \section{Dataset construction}
 \label{sec:construction}
 
-The initial set of tweets was retrieved using the \texttt{POST status/filter} endpoint of the Twitter Streaming API.\footnote{\url{https://dev.twitter.com/streaming/reference/post/statuses/filter}} The collected tweets had to be geo-located and had to originate from the area of Riga, the capital of Latvia.\footnotemark{}
+The initial set of tweets was retrieved by subscribing to the \texttt{POST status/filter} endpoint of the Twitter Streaming API\footnote{\url{https://dev.twitter.com/streaming/reference/post/statuses/filter}} with Poultry \cite{dmitrijs_milajevs_2017_546609}. The collected tweets had to be geo-located and had to originate from the area of Riga, the capital of Latvia.\footnotemark{}
 
 \footnotetext{The \texttt{locations} parameter was set to \texttt{23.9325829, 56.8570671, 24.3247299, 57.0859184}}
 
