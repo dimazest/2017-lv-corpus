@@ -44,6 +44,8 @@
 \section{Dataset construction}
 \label{sec:construction}
 
+\input{figures/timeline.tex}
+
 The initial set of tweets was retrieved by subscribing to the \texttt{POST status/filter} endpoint of the Twitter Streaming API\footnote{\url{https://dev.twitter.com/streaming/reference/post/statuses/filter}} with Poultry \cite{dmitrijs_milajevs_2017_546609}. The collected tweets had to be geo-located and had to originate from the area of Riga, the capital of Latvia.\footnotemark{}
 
 \footnotetext{The \texttt{locations} parameter was set to \texttt{23.9325829, 56.8570671, 24.3247299, 57.0859184}}
@@ -60,10 +62,8 @@ Table~\ref{tab:client-counts} shows the top ten most popular clients in the rehy
 
 The final collection resulted into 136\,067 tweets which are in Latvian, Russian or English and created after 1st of November 2016. The language of a tweet is provided by the corresponding field in the tweet JSON representation.
 
-\input{figures/timeline.tex}
-
-\section{Quantitative analysis}
-\label{sec:quantitative}
+\section{Timeline analysis}
+\label{sec:timeline}
 
 Out of 136\,067 tweets that constitute the final collection, 45.5\% are in Latvian, 33.9\% are in Russian and 20.7\% are in English, see Table~\ref{tab:language-counts} for tweet counts. The ratio between the Latvian and Russian tweets is roughly the same as the proportion of ethnic Latvians and Russians in Riga, which is 46.2\% to 37.7\%.\footnote{\url{https://en.wikipedia.org/wiki/Riga}}
 
@@ -106,7 +106,30 @@ Timeline analysis gives an insight of what events are reflected on Twitter, but 
 \section{Language use}
 \label{sec:lang-use}
 
+\input{figures/score-hist.tex}
 
+We have seen that the reflection of an event on Twitter depends on the language. How are languages used individually? Do tweet authors tweet in a one language all the time, or switch between languages depending on the context?
+
+We consider 507 users for whom at least 50 tweets were collected. 180 or 35.5\% of them tweet exclusively in one language (75 users tweet only in Latvian, 43 in Russian and 62 in English). Others tweets in several languages.
+
+To get more insight on how languages are used, we compute the language uniformity score defined as:
+\begin{equation}
+  \label{eq:score}
+  \frac{\max(n_\mathit{lv}, n_\mathit{ru}, n_\mathit{en})}{n_\mathit{lv} + n_\mathit{ru} + n_\mathit{en}}
+\end{equation}
+where $n_\mathit{lv}$ corresponds to the number of tweets in Latvian for a given user, $n_\mathit{ru}$ in Russian and $n_\mathit{en}$ in English.
+
+The higher is the score, the more dominant one language is. The lowest value of 0.33 means that all three languages are used equally. The value of 0.5 means that 50\% of tweets are written in a dominant language.
+
+The histogram on Figure~\ref{fig:score-hist} shows the score distribution. 425 (83.8\%) users tweet mostly in one language (their scores are greater than 0.897). For 78  (15.4\%) users the score is between 0.5 and 0.897. There are only four (0.8\%) users whose dominant language share is less than 50\%.
+
+Among the four Twitter users whose score is less than 0.5---meaning that they use all three languages extensively---three are personal accounts and one is a company account.
+
+Another interesting accounts that tweet equally in Latvian and Russian, but do not tweet in English are the accounts of a library and a football club. It worth noting that mixing languages is not common in Latvian Internet. For example, large media portals tend to have separate Latvian and Russian web-sites and separate Twitter handlers.
+
+To illustrate the language usage pattern between multilingual users, their first most frequently used language, their second most frequently used language and their third frequently languages were identified. Latvian is not only the most used language among the monoligual users, but also is the first and second most common choice between the multilingual users. Russian is the most frequent third choice, refer to Table~\ref{tab:language-use}).
+
+\input{figures/language-use.tex}
 
 \bibliography{references,dmilajevs_publications}
 \bibliographystyle{acl_natbib}
