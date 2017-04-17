@@ -35,43 +35,58 @@
 
 \begin{document}
 \maketitle
-\begin{abstract}
+
+\begin{abstract} 
+A possibility of building a trilingual Latvian-Russian-English corpus of tweets from Riga, Latvia is investigated. Such a corpus, when constructed, might be of great use for training machine translation models, examining cross-lingual phenomena and studying the population of Riga. This pilot study shows that it is feasible to build such a resource. The resulted corpus is made publicaly available and might be used to construct a large comparable corpus.
 \end{abstract}
 
 \section{Introduction}
 \label{sec:introduction}
+
+Comparable corpora are widely used by the natural language processing community to build machine translation or information retrieval models. The goal of this work is to investigate whether it is possible to build a comparable linguistic resource that originates from Riga, Latvia. Riga is a great location because it is a multilingual city where Latvian and Russian are widely used in everyday life, and English is spread in tourism and commerce. Being linked to a location, the resulting corpus might benefit not only the language engineers and linguists, but also social scientists.
+
+Twitter,\footnote{\url{https://twitter.com}} a microblog platform, is used as the data source in this pilot study. Over the period of 5 months (November 2016 to March 2017), tweets from Riga were collected, filtered and analysed. The main goal of the analysis is to investigate whether a creation of a comparable tweet corpus is feasible and what the corpus construction strategy should be.
+
+The analysis of the tweets, shows that they reflect real world events, such as national celebration or international political affair. While all three languages are represented---45.5\% tweets are in Latvian, 33.9\% in Russian and 20.7\% in English---not all events are equally discussed in all languages (Section~\ref{sec:timeline}). By studying users' tweeting habits, we see that the majority of users (83.3\%) mostly tweets in one language (Section~\ref{sec:lang-use}).
+
+The properties of the corpus correspond to the expectation to reflect the real world events and language use proportion, but its size is to small to draw solid conclusions. However, the construction of a reliable corpus is the matter of the data collection procedure, because, as this study shows, there is relevant data on Twitter.
+
+The resulted dataset is distributed as a supplement to the paper and available online at \texttt{http://...}
 
 \section{Dataset construction}
 \label{sec:construction}
 
 \input{figures/timeline.tex}
 
-The initial set of tweets was retrieved by subscribing to the \texttt{POST status/filter} endpoint of the Twitter Streaming API\footnote{\url{https://dev.twitter.com/streaming/reference/post/statuses/filter}} with Poultry \cite{dmitrijs_milajevs_2017_546609}. The collected tweets had to be geo-located and had to originate from the area of Riga, the capital of Latvia.\footnotemark{}
+The initial set of tweets was retrieved by subscribing to the \texttt{POST status/filter} endpoint of the Twitter Streaming API\footnote{\url{https://dev.twitter.com/streaming/reference/post/statuses/filter}}.
+%with Poultry \cite{dmitrijs_milajevs_2017_546609}
+The collected tweets had to be geo-located and had to originate from the area of Riga, the capital of Latvia.\footnotemark{}
 
 \footnotetext{The \texttt{locations} parameter was set to \texttt{23.9325829, 56.8570671, 24.3247299, 57.0859184}}
 
-251\,083 tweets were collected from the period from the 1st of November 2016 to the 31st of March 2017. On April 14th 2017, the collection was rehydrated by querying the Twitter API with the collected tweet IDs to get rid of the deleted tweets. In addition, the tweets that originated retweets were included to the collection: the JSON representation of a retweet includes the original tweet, which we extracted and added to the collection. Rehydrated and expanded collection resulted to 220\,883 tweets. Table~\ref{tab:tweet-counts} summarises the number of collected tweets. 
+251\,083 tweets were collected from the period from the 1st of November 2016 to the 31st of March 2017. On April 14th 2017, the collection was rehydrated by querying the Twitter API with the collected tweet IDs to get rid of the deleted tweets. In addition, the tweets that originated retweets were included to the collection: the JSON representation of a retweet includes the original tweet, which was extracted and added to the collection. Rehydrated and expanded collection resulted to 220\,883 tweets. Table~\ref{tab:tweet-counts} summarises the number of collected tweets. 
 
 \input{figures/tweet-counts.tex}
 
-Further analysis of the extended rehydrated collection showed that there are 23115 (10.5\%) tweets that originated from the user check-ins with Swarm\footnote{\url{https://www.swarmapp.com/}} on Foursquare.\footnote{\url{https://foursquare.com/}} This motivated additional filtering of the rehydrated collection, as ``check-in tweets'' most of the time follow a predefined template and thus do not reflect real language use. 
+Further analysis of the extended rehydrated collection showed that there are 23\,115 (10.5\%) tweets that originated from check-ins with on Foursquare.\footnote{\url{https://foursquare.com}} This motivated additional filtering of the rehydrated collection, as ``check-in tweets'' most of the time follow a predefined template and thus do not reflect real language use. 
 
 \input{figures/client-counts.tex}
 
-Table~\ref{tab:client-counts} shows the top ten most popular clients in the rehydrated collection. Together with the tweets originated from Foursquare, tweets from Instagram, an image sharing service), and Endomondo, a workout tracking service, were removed. Tweets written using the ``Word Cities'' client that posts weather reports and the Linkis client, a promotion website, were also removed.
+Table~\ref{tab:client-counts} shows the top ten most popular clients in the rehydrated collection. Together with the tweets originated from Foursquare, tweets from Instagram,\footnote{\url{https://www.instagram.com}} an image sharing service, and Endomondo,\footnote{\url{https://www.endomondo.com}} a workout tracking service, were removed. Tweets written using the ``Word Cities'' client that posts weather reports and the Linkis client---a promotion website---were also removed.
 
-The final collection resulted into 136\,067 tweets which are in Latvian, Russian or English and created after 1st of November 2016. The language of a tweet is provided by the corresponding field in the tweet JSON representation.
+The final collection resulted into 136\,067 tweets which are in Latvian, Russian or English and created after the 1st of November 2016. The language of a tweet is provided by the corresponding field in the tweet JSON representation.
 
 \section{Timeline analysis}
 \label{sec:timeline}
 
-Out of 136\,067 tweets that constitute the final collection, 45.5\% are in Latvian, 33.9\% are in Russian and 20.7\% are in English, see Table~\ref{tab:language-counts} for tweet counts. The ratio between the Latvian and Russian tweets is roughly the same as the proportion of ethnic Latvians and Russians in Riga, which is 46.2\% to 37.7\%.\footnote{\url{https://en.wikipedia.org/wiki/Riga}}
+Out of 136\,067 tweets that constitute the final collection, 45.5\% are in Latvian, 33.9\% are in Russian and 20.7\% are in English, see Table~\ref{tab:language-counts} for tweet counts.
+% The ratio between the Latvian and Russian tweets is roughly the same as the proportion of ethnic Latvians and Russians in Riga, which is 46.2\% to 37.7\%.\footnote{\url{https://en.wikipedia.org/wiki/Riga}}
 
 \input{figures/language-counts.tex}
 
 Figure~\ref{fig:timeline} shows the bandwidth of tweets in time for all three languages. There are several peaks in Twitter usage. Some of them affect all three languages, as in early January, some of them affect only one language, as in late January.
 
-If the Twitter behaviour is affected by the events in the real world, then the peaks should correspond to events in the real word. The difference in peaks, could then be explained as there are different real word events that trigger discussions on Twitter in Latvian, Russian and English. Table~\ref{tab:timeline-lang-corr} suggests, that tweets in Latvian and English share similar behaviour. The Russian tweet timeline is distinct from both timelines, tough it's behaviour is more similar to the Latvian timeline than to English.
+If the Twitter behaviour is affected by the events in the real world, then the peaks should correspond to events in the real word. The difference in peaks, could then be explained as there are different real word events that trigger discussions on Twitter in Latvian, Russian and English. Table~\ref{tab:timeline-lang-corr} suggests, that tweets in Latvian and English share similar behaviour. The Russian tweet timeline is distinct from both timelines, tough its behaviour is more similar to the Latvian timeline than to English.
 
 \input{figures/timeline-lang-corr.tex}
 
@@ -103,12 +118,12 @@ The inauguration of Donald Trump as the 45th President of the United States held
 
 % There is a general decline in Twitter usage for Latvian and English, but not for Russian, when for a short period of time there are more Russian tweets posted than Latvian.
 
-Timeline analysis gives an insight of what events are reflected on Twitter, but does not indicate how twitter is used by ethnic communities, as language choice might depend on the topic, rather than author preference.
+Timeline analysis gives an insight of what events are reflected on Twitter, but does not indicate how Twitter is used by ethnic groups, as language choice might depend on the topic.
 
 \section{Language use}
 \label{sec:lang-use}
 
-We have seen that the reflection of an event on Twitter depends on the language. How are languages used individually? Do tweet authors tweet in a one language all the time, or switch between languages depending on the context?
+We have seen that the reflection of an event on Twitter depends on the language. How are languages used individually? Do Twitter users tweet in a one language all the time, or switch between languages depending on the context?
 
 We consider 507 users for whom at least 50 tweets were collected. 180 or 35.5\% of them tweet exclusively in one language (75 users tweet only in Latvian, 43 in Russian and 62 in English). Others tweets in several languages.
 
@@ -119,7 +134,8 @@ To get more insight on how languages are used, we compute the language uniformit
 \end{equation}
 where $n_\mathit{lv}$ corresponds to the number of tweets in Latvian for a given user, $n_\mathit{ru}$ in Russian and $n_\mathit{en}$ in English.
 
-The higher is the score, the more dominant one language is. The lowest value of 0.33 means that all three languages are used equally. The value of 0.5 means that 50\% of tweets are written in a dominant language.
+%The higher the score, the more dominant one language.
+The lowest possible value of 0.33 means that all three languages are used equally. The value of 0.5 means that 50\% of tweets are written in a dominant language. The value of 1 means that the user tweets exclusively in one language.
 
 The histogram on Figure~\ref{fig:score-hist} shows the score distribution. 425 (83.8\%) users tweet mostly in one language (their scores are greater than 0.897). For 78  (15.4\%) users the score is between 0.5 and 0.897. There are only four (0.8\%) users whose dominant language share is less than 50\%.
 
@@ -127,9 +143,19 @@ Among the four Twitter users whose score is less than 0.5---meaning that they us
 
 Another interesting accounts that tweet equally in Latvian and Russian, but do not tweet in English are the accounts of a library and a football club. It worth noting that mixing languages is not common in Latvian Internet. For example, large media portals tend to have separate Latvian and Russian web-sites and separate Twitter handlers.
 
-To illustrate the language usage pattern between multilingual users, their first most frequently used language, their second most frequently used language and their third frequently languages were identified. Latvian is not only the most used language among the monoligual users, but also is the first and second most common choice between the multilingual users. Russian is the most frequent third choice, refer to Table~\ref{tab:language-use}).
+To illustrate the language usage pattern between multilingual users, their first most frequently used language, their second most frequently used language and their third most frequently language were identified. Latvian is not only the most used language among the monoligual users, but also is the first and second most common choice between the multilingual users. Russian is the most frequent third choice, as Table~\ref{tab:language-use} shows.
 
 \input{figures/language-use.tex}
+
+\section{Conclusion}
+
+We have seen that location-based tweet collection produces adequate results. Tweets in all three target languages were collected, and the resulted collection reflects real world events.
+
+To produce reliable statistics, more data has to be collected. One way of getting more data (apart from a longer data collection period) is to retrieve tweets that contain words that are unique to a language \cite{sang2013}. This might work for Latvian, as it is reasonable to assume that a Latvian tweet originates from Latvia, but will not work for Russian and English.
+
+Instead, the properties of this corpus might be used to bootstrap data collection. The most active users might be identified and their tweets collected. If having a balanced corpus is important, then multilingual users might be preferred over monolingual. The user connection graph might also be useful.
+
+Regarding the social aspect of the corpus, the future work might have a look into why topics are language dependant? How separated/unified is the society? What are the controversial topics.
 
 \bibliography{references,dmilajevs_publications}
 \bibliographystyle{acl_natbib}
