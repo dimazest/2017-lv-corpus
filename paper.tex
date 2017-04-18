@@ -56,9 +56,7 @@ The resulting dataset is distributed as a supplement to the paper and available 
 \section{Dataset construction}
 \label{sec:construction}
 
-\input{figures/timeline.tex}
-
-The initial set of tweets was retrieved by subscribing to the \texttt{POST status/filter} endpoint of the Twitter Streaming API\footnote{\url{https://dev.twitter.com/streaming/reference/post/statuses/filter}}.
+The initial set of tweets was retrieved by subscribing to the \texttt{POST status/filter} endpoint of the Twitter Streaming API.\footnote{\url{https://dev.twitter.com/streaming/reference/post/statuses/filter}}
 %with Poultry \cite{dmitrijs_milajevs_2017_546609}
 The collected tweets had to be geo-located and had to originate from the area of Riga, the capital of Latvia.\footnotemark{}
 
@@ -68,7 +66,7 @@ The collected tweets had to be geo-located and had to originate from the area of
 
 \input{figures/tweet-counts.tex}
 
-Further analysis of the extended rehydrated collection showed that there are 23\,115 (10.5\%) tweets that originated from check-ins with on Foursquare.\footnote{\url{https://foursquare.com}} This motivated additional filtering of the rehydrated collection, as ``check-in tweets'' most of the time follow a predefined template and thus do not reflect real language use. # What does this mean and why?
+Further analysis of the extended rehydrated collection showed that there are 23\,115 (10.5\%) tweets that originated from check-ins with on Foursquare.\footnote{\url{https://foursquare.com}} This motivated additional filtering of the rehydrated collection, as ``check-in tweets'' most of the time follow a predefined template and thus do not reflect real language use. % What does this mean and why?
 
 \input{figures/client-counts.tex}
 
@@ -76,15 +74,17 @@ Table~\ref{tab:client-counts} shows the top ten most popular clients in the rehy
 
 The final collection resulted in 136\,067 tweets which are in Latvian, Russian or English and created after the 1st of November 2016. The language of a tweet is provided by the corresponding field in the tweet JSON representation.
 
-\section{Timeline analysis}
+\section{Tweet analysis}
 \label{sec:timeline}
+
+\input{figures/timeline.tex}
 
 Out of 136\,067 tweets that constitute the final collection, 45.5\% are in Latvian, 33.9\% are in Russian and 20.7\% are in English, see Table~\ref{tab:language-counts} for tweet counts.
 % The ratio between the Latvian and Russian tweets is roughly the same as the proportion of ethnic Latvians and Russians in Riga, which is 46.2\% to 37.7\%.\footnote{\url{https://en.wikipedia.org/wiki/Riga}}
 
 \input{figures/language-counts.tex}
 
-Figure~\ref{fig:timeline} shows the bandwidth of tweets over time for all three languages. There are several peaks in Twitter usage. Some of them affect all three languages, as in early January, some of them affect only one language, as in late January. # Any significance? Ah, I see next paragraph.
+Figure~\ref{fig:timeline} shows the bandwidth of tweets over time for all three languages. There are several peaks in Twitter usage. Some of them affect all three languages, as in early January, some of them affect only one language, as in late January. % Any significance? Ah, I see next paragraph.
 
 If the Twitter behaviour is affected by the events in the real world, then the peaks should correspond to events in the real word. The difference in peaks could then be explained as there are different real word events that trigger discussions on Twitter in Latvian, Russian and English. Table~\ref{tab:timeline-lang-corr} suggests, that tweets in Latvian and English share similar behaviour. The Russian tweet timeline is distinct from both timelines, tough its behaviour is more similar to the Latvian timeline than to English.
 
@@ -120,7 +120,7 @@ The inauguration of Donald Trump as the 45th President of the United States held
 
 Timeline analysis gives an insight of what events are reflected on Twitter, but does not indicate how Twitter is used by ethnic groups, as language choice might depend on the topic.
 
-\section{Language use}
+\section{User analysis}
 \label{sec:lang-use}
 
 We have seen that the reflection of an event on Twitter depends on the language. How are languages used individually? Do Twitter users tweet in one language all the time, or switch between languages depending on the context?
