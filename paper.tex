@@ -43,12 +43,13 @@ Twitter has become a rich source for linguistic data. Here, a possibility of bui
 \section{Introduction}
 \label{sec:introduction}
 
-Comparable corpora are widely used by the natural language processing community to build machine translation or information retrieval models. The goal of this work is to investigate whether it is possible to build a comparable linguistic resource that originates from one specific location -- Riga, Latvia. Riga is a great location for this because it is a multilingual city in which Latvian and Russian are both widely used in everyday life, and English is used a lingua franca in tourism and commerce. Being linked to a specific location, the resulting corpus might benefit not only the language engineers and linguists, but also social scientists.
+Comparable corpora are widely used by the natural language processing community to build machine translation or information retrieval models. The goal of this work is to investigate whether it is possible to build a comparable linguistic resource of tweets that originates from one specific location--Riga, Latvia. Riga is a great location for this because it is a multilingual city in which Latvian and Russian are both widely used in everyday life, and English is used a lingua franca in tourism and commerce.
 
-Twitter,\footnote{\url{https://twitter.com}} a microblog platform, is used as the data source in this pilot study. Over the period of 5 months (November 2016 to March 2017), tweets from Riga were collected, filtered and analysed. The main goal of the analysis is to investigate whether a creation of a comparable tweet corpus is feasible and what the corpus construction strategy should be.
+Despite the fact that Latvian and Russian are widely used, there is little interaction between the two ethnic communities. The local media consists of two subsystems (Latvian and Russian) which use different sources and present different views on current affairs \cite{muiznieks2010}. However, despite the fact that large media portals tend to have separate Latvian and Russian web-sites, the same opinions are found in comments to controversial content on both versions of web-sites, making the Internet a public space for a dialogue  between the ethnic communities \cite{sulmane2010}. The resulting corpus of user generated content is a fruitful resource for studying the integration of the two communities, by identifying what is being discussed; how, and most importantly why it is being discussed.
 
-% I am not sure what the following means ... are all these tweets related to real world events? I think this needs some clearity
-The analysis of the tweets, shows that they reflect real world events, such as national celebrations or international political affairs. While all three languages are represented---45.5\% tweets are in Latvian, 33.9\% in Russian and 20.7\% in English---not all events are equally discussed in all languages (Section~\ref{sec:timeline}). By studying users' tweeting habits, we see that the majority of users (83.3\%) mostly tweets in one language (Section~\ref{sec:lang-use}).
+% Twitter,\footnote{\url{https://twitter.com}} a microblog platform, is used as the data source in this pilot study. Over the period of 5 months (November 2016 to March 2017), tweets from Riga were collected, filtered and analysed. The main goal of the analysis is to investigate whether a creation of a comparable tweet corpus is feasible and what the corpus construction strategy should be.
+
+The analysis of the tweets, shows that some real world events, such as national celebrations or international political affairs, are actively discussed on Twitter. While all three languages are represented---45.5\% tweets are in Latvian, 33.9\% in Russian and 20.7\% in English---not all events are equally discussed in all languages (Section~\ref{sec:timeline}). By studying users' tweeting habits, we see that the majority of users (83.3\%) mostly tweets in one language (Section~\ref{sec:lang-use}).
 
 The properties of the corpus correspond to the expectation to reflect the real world events and language use proportion, but its size is too small to draw solid conclusions. However, the construction of a reliable corpus is the matter of the data collection procedure, because, as this study shows, there is relevant data on Twitter.
 
@@ -56,7 +57,7 @@ The resulting dataset is distributed as a supplement to the paper and available 
 
 \section{Related work}
 
-Twitter provides an easy way to build a large text corpora for research. A numerous tweet collections are build and released for a variety of purposes. For example, \citet{sang2013} discuss the process of building a large collection of Dutch tweets and challenges of accessing the data. Their retrieval method is based on a list of frequent Dutch words.
+Twitter\footnote{\url{https://twitter.com}} provides an easy way to build a large text corpora for research. A numerous tweet collections are build and released for a variety of purposes. For example, \citet{sang2013} discuss the process of building a large collection of Dutch tweets and challenges of accessing the data. Their retrieval method is based on a list of frequent Dutch words.
 
 \citet{SANVICENTE16.465} build a parallel multilingual corpus of tweets%
 %in Spanish, Basque, Catalan, Galician and Portuguese
@@ -156,9 +157,7 @@ The lowest possible value of 0.33 means that all three languages are used equall
 
 The histogram on Figure~\ref{fig:score-hist} shows the score distribution. 420 (82.8\%) users tweet mostly in one language (their scores are greater than 0.9). For 83  (16.4\%) users the score is between 0.5 and 0.9. There are only four (0.8\%) users whose dominant language share is less than 50\%.
 
-Among the four Twitter users whose score is less than 0.5---meaning that they use all three languages extensively---three are personal accounts and one is a company account.
-
-Another interesting accounts that tweet equally in Latvian and Russian, but do not tweet in English are the accounts of a library and a football club. It worth noting that mixing languages is not common in Latvian Internet. For example, large media portals tend to have separate Latvian and Russian web-sites and separate Twitter handles.
+Among the four Twitter users whose score is less than 0.5---meaning that they use all three languages extensively---three are personal accounts and one is a company account. Another interesting accounts that tweet equally in Latvian and Russian, but do not tweet in English are the accounts of a library and a football club.
 
 To illustrate the language usage pattern between multilingual users, their first most frequently used language, their second most frequently used language and their third most frequently language were identified. If user tweeted equally in two (three) languages, then the two (three) languages were given the maximal preference. A user who tweeted equally in Latvian and Russian, but less in English, will counted as Latvian and Russian being the first perference, English as the third.
 
