@@ -47,11 +47,28 @@ Comparable corpora are widely used by the natural language processing community 
 
 Twitter,\footnote{\url{https://twitter.com}} a microblog platform, is used as the data source in this pilot study. Over the period of 5 months (November 2016 to March 2017), tweets from Riga were collected, filtered and analysed. The main goal of the analysis is to investigate whether a creation of a comparable tweet corpus is feasible and what the corpus construction strategy should be.
 
+% I am not sure what the following means ... are all these tweets related to real world events? I think this needs some clearity
 The analysis of the tweets, shows that they reflect real world events, such as national celebrations or international political affairs. While all three languages are represented---45.5\% tweets are in Latvian, 33.9\% in Russian and 20.7\% in English---not all events are equally discussed in all languages (Section~\ref{sec:timeline}). By studying users' tweeting habits, we see that the majority of users (83.3\%) mostly tweets in one language (Section~\ref{sec:lang-use}).
 
 The properties of the corpus correspond to the expectation to reflect the real world events and language use proportion, but its size is too small to draw solid conclusions. However, the construction of a reliable corpus is the matter of the data collection procedure, because, as this study shows, there is relevant data on Twitter.
 
 The resulting dataset is distributed as a supplement to the paper and available online at \texttt{http://...}
+
+\section{Related work}
+
+Twitter provides an easy way to build a large text corpora for research. A numerous tweet collections are build and released for a variety of purposes. For example, \citet{sang2013} discuss the process of building a large collection of Dutch tweets and challenges of accessing the data. Their retrieval method is based on a list of frequent Dutch words.
+
+\citet{SANVICENTE16.465} build a parallel multilingual corpus of tweets%
+%in Spanish, Basque, Catalan, Galician and Portuguese
+. Their process consists of two parts: retrieval and alignment. Retrieval is based on a list of multilingual users. The collected tweets are aligned using crowdsourcing. \citet{ling-EtAl:2013:ACL2013} automatically extract parallel segments from Sina Weibo (a Chinese counterpart of Twitter). 
+
+\citet{gotti-langlais-farzindar:2013:LASM} use the parallel web pages mentioned in tweets of the agencies and organisations of Canada to train a statistical machine translation model.
+
+There is a body of research of the Latvian twittersphere, for example the work on sentiment analysis \cite{Peisenieks2014} and opinion mining \cite{vspats2016opinion}. Both studies focus on Latvian.
+
+
+
+% \citet{gotti-langlais-farzindar:2013:LASM,Peisenieks2014}
 
 \section{Dataset construction}
 \label{sec:construction}
