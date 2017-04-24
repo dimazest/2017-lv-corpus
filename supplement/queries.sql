@@ -42,20 +42,32 @@ or features#>>'{languages,0}' = 'en'
 and created_at > '2016-10-31'
 );
 
--- Language statistics
+-- Mid November
 with tweets as (
 select *  from tweet
-where collection = 'lv-final' and created_at >= '2016-11-01' and created_at < '2017-04-01'
+where collection = 'lv-final' and created_at >= '2016-11-11' and created_at < '2016-11-19'
 )
-select features#>>'{languages,0}' as language, count(*), round(count(*)::numeric / (select count(*) from tweets), 3) * 100 as share
+insert into
+tweet(tweet_id, collection, text, features, created_at) (
+select tweet_id, 'lv-mid-nov' as collection, tweets.text, features::jsonb, created_at
 from tweets
-group by language
-order by count(*) desc;
+);
+
+-- Early January
+with tweets as (
+select *  from tweet
+where collection = 'lv-final' and created_at >= '2017-01-03' and created_at < '2017-01-10'
+)
+insert into
+tweet(tweet_id, collection, text, features, created_at) (
+select tweet_id, 'lv-early-jan' as collection, tweets.text, features::jsonb, created_at
+from tweets
+);
 
 -- Late January
 with tweets as (
 select *  from tweet
-where collection = 'lv-final' and created_at >= '2017-01-22' and created_at < '2017-02-05'
+where collection = 'lv-final' and created_at >= '2017-01-22' and created_at < '2017-01-24'
 )
 insert into
 tweet(tweet_id, collection, text, features, created_at) (
@@ -64,30 +76,3 @@ from tweets
 );
 
 
--- Delfi LV clients
-with tweets as (
-select *
-from tweet
-where collection = 'lv-rehydrated' and features#>>'{user_info,screen_name_id}' = '20577579'
-)
-select
-features#>>'{filter,source}' source,
-count(*) c,
-count(*) * 100 / (select count(*) from tweets) as share
-from tweets
-group by source
-order by c desc;
-
--- Delfi RU clients
-with tweets as (
-select *
-from tweet
-where collection = 'lv-rehydrated' and features#>>'{user_info,screen_name_id}' = '851127702'
-)
-select
-features#>>'{filter,source}' source,
-count(*) c,
-count(*) * 100 / (select count(*) from tweets) as share
-from tweets
-group by source
-order by c desc;
