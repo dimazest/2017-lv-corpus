@@ -99,7 +99,7 @@ This motivated additional filtering of the rehydrated collection, as ``check-in 
 
 Table~\ref{tab:client-counts} shows the top ten most popular clients in the rehydrated collection. Together with the tweets originating from Foursquare, tweets from Instagram, %\footnote{\url{https://www.instagram.com}}
 an image sharing service, and Endomondo, %\footnote{\url{https://www.endomondo.com}}
-a workout tracking service, were removed. Tweets written using the ``Word Cities'' client, which posts weather reports, and the Linkis client---a promotion website---were also removed.
+a workout tracking service, were removed. Tweets written using the World Cities client, which posts weather reports, and the Linkis client---a promotion website---were also removed.
 
 The final collection resulted in 136\,067 tweets which are in Latvian, Russian or English and created after the 1st of November 2016. The language of a tweet is provided by the corresponding field in the tweet JSON representation.
 
@@ -177,10 +177,10 @@ Latvian is not only the most used language among the monoligual users, but also 
 
 We have seen that location-based tweet collection produces adequate results. Tweets in all three target languages were collected, and the resulting collection reflects real world events.
 
-How comparable is the corpora? Topics are language dependent, so it is not the case that all topics are discussed in every language. There are ``monolingual topics'' such as the independence day in Latvia. Even ``multilingual topics'' vary in content, as with the snowstorm tweets, where Latvian and Russian tweets shared common topics, but tweets in English were distinct.
+How comparable are the language samples within the corpus? Topics are language dependent, so it is not the case that all topics are discussed in every language. There are ``monolingual topics'' such as the independence day in Latvia. Even ``multilingual topics'' vary in content, as with the snowstorm tweets, where Latvian and Russian tweets shared common topics, but tweets in English were distinct.
 
 %
-The final answer is that it depends on the application. For machine translation, it is important to have similar content, so the parallel segments can be extracted, for example from Latvian and Russian snowstorm tweets. For a social study, the corpus has to be representative, so that the topics could lead to the analysis of the communities as why the president inauguration was discussed much less in Russian than in Latvian.
+The final answer is that it depends on the application. For machine translation, it is important to have similar content, so the parallel segments can be extracted, for example from Latvian and Russian snowstorm tweets. For a social study, the corpus has to be representative, so that the topics can lead to the analysis of the communities as in the case of why the president inauguration was discussed much less in Russian than in Latvian.
 
 %To produce reliable statistics, more data has to be collected. One way of getting more data (apart from a longer data collection period) is to retrieve tweets that contain words that are unique to a language. This might work for Latvian, as it is reasonable to assume that a Latvian tweet originates from Latvia, % If there was space for this, I would add the reference to the "1,000 languages" (book) entry which I sent you earlier as a picture via twitter messenger. 
 %but this will not work for Russian and English. Instead, the properties of this corpus might be used to bootstrap data collection. The most active users might be identified and their tweets collected. If having a balanced corpus is important, then multilingual users might be preferred over monolingual, bun in case of Riga, there are not so many of them. The user connection graph might also be useful.
