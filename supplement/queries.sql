@@ -52,6 +52,29 @@ from tweets
 group by language
 order by count(*) desc;
 
+-- Mid December
+with tweets as (
+select *  from tweet
+where collection = 'lv-final' and created_at >= '2016-12-12' and created_at < '2016-12-20'
+)
+insert into
+tweet(tweet_id, collection, text, features, created_at) (
+select tweet_id, 'lv-mid-dec' as collection, tweets.text, features::jsonb, created_at
+from tweets
+);
+
+-- Early January
+with tweets as (
+select *  from tweet
+where collection = 'lv-final' and created_at >= '2017-01-01' and created_at < '2017-01-10'
+)
+insert into
+tweet(tweet_id, collection, text, features, created_at) (
+select tweet_id, 'lv-early-jan' as collection, tweets.text, features::jsonb, created_at
+from tweets
+);
+
+
 -- Late January
 with tweets as (
 select *  from tweet
@@ -63,6 +86,17 @@ select tweet_id, 'lv-late-jan' as collection, tweets.text, features::jsonb, crea
 from tweets
 );
 
+
+-- With follow users.
+with tweets as (
+select *  from tweet
+where collection = 'lv' and created_at >= '2017-04-17'
+)
+insert into
+tweet(tweet_id, collection, text, features, created_at) (
+select tweet_id, 'lv-follow' as collection, tweets.text, features::jsonb, created_at
+from tweets
+);
 
 -- Delfi LV clients
 with tweets as (
