@@ -32,26 +32,24 @@
 \maketitle
 
 \begin{abstract}
-Twitter has become a rich source for linguistic data. Here, a possibility of building a trilingual Latvian-Russian-English corpus of tweets from Riga, Latvia is investigated. Such a corpus, once constructed, might be of great use for multiple purposes such as training machine translation models, examining cross-lingual phenomena and studying the population of Riga. This pilot study shows that it is feasible to build such a resource by building and analysing a pilot corpus, which is made publicly available and can be used to construct a large comparable corpus.
+Twitter has become a rich source for linguistic data. Here, a possibility of building a trilingual Latvian-Russian-English corpus of tweets from Riga, Latvia is investigated. Such a corpus, once constructed, might be of great use for multiple purposes including  training machine translation models, examining cross-lingual phenomena and studying the population of Riga. This pilot study shows that it is feasible to build such a resource by collecting and analysing a pilot corpus, which is made publicly available and can be used to construct a large comparable corpus.
 \end{abstract}
 
 \section{Introduction}
 \label{sec:introduction}
 
 % No reference to Wierbicka? 
-Comparable corpora are widely used by the natural language processing community to build machine translation or information retrieval models. The goal of this work is to investigate in  apilot study whether it is possible to build a comparable linguistic resource of tweets that originates from one specific location--Riga, Latvia. Riga is a great location for this because it is a multilingual city in which Latvian and Russian are both widely used in everyday life, and English is used as a lingua franca in tourism and commerce.
+Comparable corpora are widely used by the natural language processing community to build machine translation or information retrieval models. The goal of this work is to investigate in  a pilot study whether it is possible to build a comparable linguistic resource of tweets that originates from one specific location--Riga, Latvia. Riga is a great location for this because it is a multilingual city in which Latvian and Russian are both widely used in everyday life, and English is a lingua franca in tourism and commerce.
 
-Despite the fact that Latvian and Russian are widely used, there is little interaction between the two ethnic communities. The local media consists of two subsystems (Latvian and Russian) which use different sources and present different views on current affairs \cite{muiznieks2010}. However, despite the fact that large media portals tend to have separate Latvian and Russian web-sites, the same opinions are found in comments to controversial content on both versions of web-sites, making the Internet a public space for a dialogue  between the ethnic communities \cite{sulmane2010}. A corpus of user generated content that comes from one location is a fruitful resource for studying the integration of the two communities, by identifying what is being discussed; how, and most importantly why it is being discussed.
+Despite the fact that Latvian and Russian are widely used, there is little interaction between the two ethnic communities. The local media consists of two subsystems (Latvian and Russian) which use different sources and present different views on current affairs \cite{muiznieks2010}. Even though large media portals tend to have separate Latvian and Russian web-sites, the same opinions are found in comments to controversial content on both versions of web-sites, making the Internet a public space for a dialogue  between the ethnic communities \cite{sulmane2010}. A corpus of user generated content from Riga is a fruitful resource for studying the integration of the two communities, by identifying what is being discussed; how, and most importantly why it is being discussed.
 
-% Twitter,\footnote{\url{https://twitter.com}} a microblog platform, is used as the data source in this pilot study.
-
-Over the period of 5 months (November 2016 to March 2017), tweets from Riga were collected, filtered and analysed.\footnotemark{} The main goal of the analysis is to investigate whether a creation of a comparable tweet corpus is feasible and what the corpus construction strategy should be. To see whether the corpus is comparable, the peaks of Twitter usage were identified. The peaks correspond to real world events, such as national celebrations, international political affairs or weather are actively discussed on Twitter in all three languages, but in different proportions (Section~\ref{sec:timeline}).
+The pilot corpus\footnotemark{} consists of tweets over the period of 5 months (November 2016 to March 2017). The main goal of the analysis is to investigate whether a creation of a comparable tweet corpus is feasible and what the corpus construction strategy should be. To see whether the pilot corpus is comparable, the peaks of Twitter usage were identified. These peaks correspond to real world events (national celebrations, international political affairs and weather). The events are actively discussed in all languages, but in different proportions (Section~\ref{sec:timeline}).
 
 \footnotetext{\url{https://doi.org/10.5281/zenodo.582300}}
 
-All three languages are represented---45.5\% tweets are in Latvian, 33.9\% in Russian and 20.7\% in English.\footnote{
+All three languages are represented: 45.5\% tweets are in Latvian, 33.9\% in Russian and 20.7\% in English.\footnote{
 The ratio of ethnic Latvians to Russians in Riga is 46.2\% to 37.7\%.}
-By studying users' tweeting habits, we see that the majority of users (83.3\%) mostly tweets in one language (Section~\ref{sec:lang-use}), making the tweet collection by subscribing only to multilingual users incomplete.
+By studying users' tweeting habits, we see that the majority of users (83.3\%) mostly tweets in one language (Section~\ref{sec:lang-use}), making the tweet collection strategy that considers only multilingual users incomplete.
 
 The properties of the corpus correspond to the expectation to reflect the real world events and language use proportion, but its size is too small to draw solid conclusions. However, the construction of a reliable comparable corpus is a matter of the data collection procedure and corpus' application, because, as this study shows, not all topics are discussed equally.
 
@@ -184,6 +182,14 @@ The final answer is that it depends on the application. For machine translation,
 %but this will not work for Russian and English. Instead, the properties of this corpus might be used to bootstrap data collection. The most active users might be identified and their tweets collected. If having a balanced corpus is important, then multilingual users might be preferred over monolingual, bun in case of Riga, there are not so many of them. The user connection graph might also be useful.
 
 %Regarding the social aspect of the corpus, the future work might have a look into why topics are language dependant? How unified is the society? What are the controversial topics?
+
+\section*{Acknowledgements}
+
+The author thanks Dr.~Sascha Griffiths for valuable discussion and Tatiana Chepurko for literature suggestions.
+
+\section*{Disclaimer}
+
+Certain commercial products are identified in this paper in order to specify the experimental procedure adequately. Such identification is not intended to imply recommendation or endorsement by the National Institute of Standards and Technology, nor is it intended to imply that the identified products are necessarily the best available for the purpose.
 
 \balance
 
