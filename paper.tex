@@ -8,7 +8,7 @@
 \usepackage{graphicx}
 \usepackage{balance}
 
-%\aclfinalcopy % Uncomment this line for the final submission
+\aclfinalcopy % Uncomment this line for the final submission
 \def\aclpaperid{8} %  Enter the acl Paper ID here
 
 %\setlength\titlebox{5cm}
@@ -21,16 +21,10 @@
 
 \title{Toward a Comparable Corpus of Latvian, Russian and English Tweets}
 
-\author{First Author \\
-  Affiliation / Address line 1 \\
-  Affiliation / Address line 2 \\
-  Affiliation / Address line 3 \\
-  {\tt email@domain} \\\And
-  Second Author \\
-  Affiliation / Address line 1 \\
-  Affiliation / Address line 2 \\
-  Affiliation / Address line 3 \\
-  {\tt email@domain} \\}
+\author{Dmitrijs Milajevs \\
+  NIST \\
+  Gaithersburg, MD, USA \\
+  {\tt dmitrijs.milajevs@nist.gov}}
 
 \date{}
 
@@ -38,14 +32,14 @@
 \maketitle
 
 \begin{abstract}
-Twitter has become a rich source for linguistic data. Here, a possibility of building a trilingual Latvian-Russian-English corpus of tweets from Riga, Latvia is investigated. Such a corpus, once constructed, might be of great use for multiple purposes such as training machine translation models, examining cross-lingual phenomena and studying the population of Riga. This pilot study shows that it is feasible to build such a resource. The resulting corpus is made publicly available and can be used to construct a large comparable corpus.
+Twitter has become a rich source for linguistic data. Here, a possibility of building a trilingual Latvian-Russian-English corpus of tweets from Riga, Latvia is investigated. Such a corpus, once constructed, might be of great use for multiple purposes such as training machine translation models, examining cross-lingual phenomena and studying the population of Riga. This pilot study shows that it is feasible to build such a resource by building and analysing a pilot corpus, which is made publicly available and can be used to construct a large comparable corpus.
 \end{abstract}
 
 \section{Introduction}
 \label{sec:introduction}
 
 % No reference to Wierbicka? 
-Comparable corpora are widely used by the natural language processing community to build machine translation or information retrieval models. The goal of this work is to investigate whether it is possible to build a comparable linguistic resource of tweets that originates from one specific location--Riga, Latvia. Riga is a great location for this because it is a multilingual city in which Latvian and Russian are both widely used in everyday life, and English is used as a lingua franca in tourism and commerce.
+Comparable corpora are widely used by the natural language processing community to build machine translation or information retrieval models. The goal of this work is to investigate in  apilot study whether it is possible to build a comparable linguistic resource of tweets that originates from one specific location--Riga, Latvia. Riga is a great location for this because it is a multilingual city in which Latvian and Russian are both widely used in everyday life, and English is used as a lingua franca in tourism and commerce.
 
 Despite the fact that Latvian and Russian are widely used, there is little interaction between the two ethnic communities. The local media consists of two subsystems (Latvian and Russian) which use different sources and present different views on current affairs \cite{muiznieks2010}. However, despite the fact that large media portals tend to have separate Latvian and Russian web-sites, the same opinions are found in comments to controversial content on both versions of web-sites, making the Internet a public space for a dialogue  between the ethnic communities \cite{sulmane2010}. The resulting corpus of user generated content is a fruitful resource for studying the integration of the two communities, by identifying what is being discussed; how, and most importantly why it is being discussed.
 
@@ -92,7 +86,7 @@ The collected tweets had to be geo-located and had to originate from the area of
 
 % \input{figures/tweet-counts.tex}
 
-Further analysis of the extended rehydrated collection showed that there are 23\,115 (10.5\%) tweets that originated from check-ins with on Foursquare. %\footnote{\url{https://foursquare.com}} 
+Further analysis of the extended rehydrated collection showed that there are 23\,115 (10.5\%) tweets that originated from check-ins on Foursquare. %\footnote{\url{https://foursquare.com}} 
 This motivated additional filtering of the rehydrated collection, as ``check-in tweets'' follow a predefined template most of the time and thus do not reflect real language use. % What does this mean and why?
 
 \input{figures/client-counts.tex}
@@ -143,7 +137,9 @@ In early January a snowstorm hit Riga. In Latvian and Russian the discussed topi
 
 \input{figures/score-hist.tex}
 
-The inauguration of the 45th President of the United States was held on 20th of January 2017. The number of Latvian tweets increases, while for other languages it stays roughly the same. The reason why there are relatively little politics-oriented Russian tweets might be that 60\% of citizens and 47\% of non-citizens are interested in politics \cite{civicsociety}. Out of citizens, 60\% are ethnic Latvians, 27\% are ethnic Russians. Out of non-citizens, 66\% are Russians, and less than 1\% are Latvians.
+The inauguration of the 45th President of the United States was held on 20th of January 2017. The number of Latvian tweets increases, while for other languages it stays roughly the same. The reason why there are relatively little politics-oriented Russian tweets might be that 60\% of citizens and 47\% of non-citizens are interested in politics \cite{civicsociety}. Out of citizens, 60\% are ethnic Latvians, 27\% are ethnic Russians. Out of non-citizens, 66\% are Russians, and less than 1\% are Latvians.\footnotemark{}
+
+\footnotetext{\href{https://lv.wikipedia.org/wiki/Nepilso\%C5\%86i_(Latvija)}{\tt{https://lv.wikipedia.org/wiki/ Nepilso\c{n}i\_(Latvija)}}}
 % https://lv.wikipedia.org/wiki/Nepilso%C5%86i_(Latvija)
 % Surpringing, no? My German friends were posting and tweeting in English that day. This contrasts slightly with the next sentence. 
 
@@ -170,7 +166,7 @@ Among the four Twitter users whose score is less than 0.5---meaning that they us
 To illustrate the language usage pattern between multilingual users, their first most frequently used language, their second most frequently used language and their third most frequently language were identified. If a user tweeted equally in two (three) languages, then the two (three) languages were given the maximal preference. A user who tweeted equally in Latvian and Russian, but less in English, will be counted as Latvian and Russian being their first preference, English as the third.
 
 Latvian is not only the most used language among the monoligual users, but also is the first and third most common choice between the multilingual users. The preference for Russian is similar to Latvian, despite the numbers being slightly lower, suggesting its significant role in everyday life. English is almost the ultimate second choice, proving its role as a lingua franca, as Table~\ref{tab:language-use} shows.
-
+%
 \input{figures/language-use.tex}
 
 \section{Conclusion}
